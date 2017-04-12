@@ -1,0 +1,41 @@
+﻿@model GoalNewsV2.Models.Client
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="jumbotron">
+    <div class="container">
+        <h2>Detailles del cliente</h2>
+
+        <div>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.Label("Cliente")
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.ClientName)
+                </dd>
+
+                <dt>
+                    @Html.Label("Suscriptores")
+                </dt>
+
+                <dd>
+                    @foreach (var item in Model.Employees)
+            {
+                        @Html.DisplayFor(modelitem => item.EmployeeName)
+                        <br />
+                    }
+                </dd>
+
+            </dl>
+        </div>
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.ClientID }) |
+            @Html.ActionLink("Back to List", "Index")
+        </p>
+    </div>
+</div>
